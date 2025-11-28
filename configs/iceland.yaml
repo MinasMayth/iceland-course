@@ -1,0 +1,53 @@
+# Sample TerraTorch training config for the Iceland ML Module
+# Adjust paths and parameters before running.
+
+project:
+  name: iceland-ml
+  output_dir: runs/iceland
+
+# Example dataset specification (customize to your layout)
+dataset:
+  name: s2_clc
+  train:
+    imagery_glob: data/s2/train/*.tif
+    labels_glob: data/labels/train/*.tif
+  val:
+    imagery_glob: data/s2/val/*.tif
+    labels_glob: data/labels/val/*.tif
+  bands: [B02, B03, B04, B08]  # adjust to match your stacks
+  num_classes: 10               # adjust to your CLC mapping
+  class_mapping:
+    # example: remap raw CLC codes to compact class ids 0..N-1
+    # '111': 1
+    # '112': 1
+    # '211': 2
+    # ...
+
+# Model and training
+model:
+  backbone: geospatial-fm        # placeholder; choose actual FM id
+  head: unet                     # example head type
+  freeze_backbone: true          # start by freezing backbone
+
+training:
+  epochs: 5
+  batch_size: 8
+  lr: 1e-3
+  accelerator: auto              # gpu if available
+  precision: 16                  # mixed precision if supported
+  num_workers: 4
+  early_stopping:
+    monitor: val/mIoU
+    mode: max
+    patience: 3
+  checkpoint:
+    monitor: val/mIoU
+    mode: max
+
+logging:
+  wandb:
+    enabled: false
+    project: iceland-ml
+
+# Example CLI (documentation)
+# terratorch train --config configs/iceland.yaml --output runs/iceland

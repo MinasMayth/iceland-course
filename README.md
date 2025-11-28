@@ -37,3 +37,21 @@ Collection of the support material for the course is still at its early stages. 
 | 1    | 🚧 In Progress | Environment configuration scripts from existing projects currently under refinement. |
 | 2    | 🗓️ Planned | Content to be discussed with Gabriele. |
 | 3    | 🗓️ Planned    | Content to be discussed with Gabriele. |
+
+## Iceland ML Module (New)
+
+This repository now also includes a 3-lesson module tailored for an elective ML course at the University of Iceland that connects practical remote sensing workflows with state-of-the-art geospatial foundation models (via TerraTorch):
+
+- Lesson 1 — Data & Environment: pick an AOI, obtain four Sentinel‑2 acquisitions, and align with CORINE/CLC labels.
+- Lesson 2 — Fine‑Tuning: run TerraTorch from CLI and a notebook; optionally customize a dataloader or model head.
+- Lesson 3 — Inference & Use: generate a classification map on new data and compare to a benchmark.
+
+Logistics and guidance:
+- Cohort: 5–20 students (elective → higher engagement).
+- Modality: in-person preferred; virtual supported with shorter blocks and recorded demos.
+- Schedule: 2nd week of Jan → mid-April; intensive sessions with async practice.
+- Communication: set up Slack or Mattermost for announcements and help.
+- Environments: JupyterLab-first; for heavier runs consider JSC/JUDOOR. See `docs/iceland-ml/` for details.
+
+Navigation in docs:
+- Overview and lessons under “Iceland ML Module” in the MkDocs sidebar.
