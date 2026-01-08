@@ -27,7 +27,7 @@ By completing this module, students will be able to:
 
 ---
 
-## Lab Structure (6 Sessions × 40 minutes)
+## Lab Structure (8 Sessions × 40 minutes)
 
 All labs are taught by **Samy Hashim** in online format. Each lab builds progressively toward a complete ML pipeline.
 
@@ -94,28 +94,45 @@ All labs are taught by **Samy Hashim** in online format. Each lab builds progres
 
 ---
 
-### Lab 4: Data Preprocessing and Patch Extraction
+### Lab 4: Data Preprocessing
 **Week 8 | Duration: 40 min | Mode: Online**
 
 **Topics:**
 - Loading and inspecting GeoTIFF imagery
-- Extracting fixed-size patches (224×224) for deep learning
 - Normalization techniques (min-max, standardization, percentile clipping)
-- Matching patches with CORINE land cover labels
+- Matching imagery with CORINE land cover labels
 - Creating train/validation/test splits (70/15/15)
-- Saving ML-ready datasets
+- Saving intermediate artifacts for downstream use
 
 **Deliverables:**
-- ✅ Preprocessed training dataset (NumPy arrays)
-- ✅ Train/val/test splits with labels
+- ✅ Normalized imagery ready for patching
+- ✅ Train/val/test split definitions
 - ✅ Normalization parameters (saved for inference)
 - ✅ Dataset metadata (bands, classes, dimensions)
 
-📓 **Notebook:** [`lab4_preprocessing_patches.ipynb`](../../notebooks/iceland-ml/lab4_preprocessing_patches.ipynb)
+📓 **Notebook:** [`lab4_preprocessing_patches.ipynb`](../../notebooks/iceland-ml/lab4_preprocessing_patches.ipynb) — preprocessing section
 
 ---
 
-### Lab 5.1: Baseline Model Training
+### Lab 5: Patch Extraction
+**Week 9 | Duration: 40 min | Mode: Online**
+
+**Topics:**
+- Extracting fixed-size patches (224×224) for deep learning
+- Writing clean patch metadata
+- Balancing classes across train/val/test splits
+- Persisting patches efficiently (NumPy/NPZ)
+
+**Deliverables:**
+- ✅ Patch datasets for train/val/test
+- ✅ Patch-level metadata and integrity checks
+- ✅ Saved patch arrays ready for training
+
+📓 **Notebook:** [`lab4_preprocessing_patches.ipynb`](../../notebooks/iceland-ml/lab4_preprocessing_patches.ipynb) — patch extraction section
+
+---
+
+### Lab 6: Baseline Model Training
 **Week 11 | Duration: 40 min | Mode: Online**
 
 **Topics:**
@@ -136,7 +153,7 @@ All labs are taught by **Samy Hashim** in online format. Each lab builds progres
 
 ---
 
-### Lab 5.2: Model Evaluation Metrics
+### Lab 7: Model Evaluation Metrics
 **Week 12 | Duration: 40 min | Mode: Online**
 
 **Topics:**
@@ -159,29 +176,21 @@ All labs are taught by **Samy Hashim** in online format. Each lab builds progres
 
 ---
 
-## Advanced Topics (Lessons with Rocco & Gabriele)
+### Lab 8: TerraTorch Fine-tuning
+**Week 13 | Duration: 40 min | Mode: Online**
 
-The lab sessions complement the main lectures, which cover:
+**Topics:**
+- Overview of TerraTorch and geospatial foundation models
+- Preparing TerraTorch config for Sentinel-2 land cover
+- Running fine-tuning on JURECA (CLI + SLURM submission)
+- Logging, checkpoints, and experiment tracking
 
-### Lesson 1: Data & Environment
-- Remote sensing systems and Sentinel-2 specifications
-- CORINE Land Cover dataset
-- AOI selection strategies
-- Data acquisition best practices
+**Deliverables:**
+- ✅ TerraTorch config tailored to the course dataset
+- ✅ Fine-tuned model checkpoint
+- ✅ Notes on hyperparameters and runtime performance
 
-### Lesson 2: Fine-tuning Foundation Models
-- Introduction to TerraTorch and Prithvi
-- Transfer learning concepts
-- CLI workflow for model fine-tuning
-- Custom data loaders and preprocessing
-- Experiment tracking and checkpointing
-
-### Lesson 3: Inference & Deployment
-- Applying fine-tuned models to new data
-- Generating classification maps
-- Benchmarking against baselines
-- Model limitations and failure cases
-- Production deployment considerations
+📓 **Notebook:** [`finetune.ipynb`](../../notebooks/finetune.ipynb)
 
 ---
 

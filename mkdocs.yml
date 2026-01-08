@@ -16,13 +16,13 @@ nav:
     - Teaching Plan (Slides): 'iceland-ml/teaching-plan-slides.md'
 
 # Project information
-site_name: BIP Course Docs
+site_name: Iceland ML Course Docs
 
 # Configuration
 theme:
   name: material
   palette:
-    scheme: bip
+    scheme: iceland
   font:
     text: Source Sans 3
     code: DM Mono

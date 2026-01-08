@@ -1,5 +1,5 @@
 # User defined names
-kernel_name="bip"
+kernel_name="iceland-ml"
 
 # Project folder
 current_file="${BASH_SOURCE[0]:-${(%):-%x}}"
@@ -10,7 +10,7 @@ export PROJECT_DIR="$(realpath "$(dirname "$scripts_dir")")"
 export KERNEL_NAME="$(echo "${kernel_name}" | awk '{print tolower($0)}')"
 export KERNEL_SPECS_PREFIX="${HOME}/.local"
 export KERNEL_SPECS_DIR="${KERNEL_SPECS_PREFIX}/share/jupyter/kernels"
-export KERNEL_VENVS_DIR="${PROJECT_training2504}/${USER}/jupyter/kernels"
+export KERNEL_VENVS_DIR="${PROJECT_training2600:-${PROJECT:-${HOME}/project}}/jupyter/kernels"
 
 # Virtual environment
 export VENV_DIR="${KERNEL_VENVS_DIR}/${KERNEL_NAME}"

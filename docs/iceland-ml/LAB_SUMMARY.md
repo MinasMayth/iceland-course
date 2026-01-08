@@ -60,7 +60,7 @@ mkdir -p my_workspace/{data,notebooks,scripts,models,results}
 **During Lab:**
 1. Launch Jupyter-JSC session
 2. Learn Git basics (clone, commit, push, pull)
-3. Clone course repository
+3. Clone the Iceland ML course repository
 4. Create Python virtual environment
 5. Register custom Jupyter kernel
 6. Run first analysis notebook
@@ -73,7 +73,7 @@ mkdir -p my_workspace/{data,notebooks,scripts,models,results}
 **Key Commands:**
 ```bash
 # In Jupyter-JSC terminal
-git clone https://github.com/YOUR_ORG/bip-course.git
+git clone https://github.com/YOUR_ORG/iceland-ml-course.git
 python -m venv ~/envs/ml_eo_course
 source ~/envs/ml_eo_course/bin/activate
 python -m ipykernel install --user --name=ml_eo_course
