@@ -7,15 +7,22 @@ nav:
     - Virtual environment: 'units/unit1/environment-setup.md'
   - Distributed Deep Learning: 'units/unit2/README.md'
   - Geospatian FMs finetuning: 'units/unit3/README.md'
+  - Iceland ML Module:
+    - Overview: 'iceland-ml/README.md'
+    - Lesson 1: 'iceland-ml/lesson1.md'
+    - Lesson 2: 'iceland-ml/lesson2.md'
+    - Lesson 3: 'iceland-ml/lesson3.md'
+    - Instructor Notes: 'iceland-ml/instructor-notes.md'
+    - Teaching Plan (Slides): 'iceland-ml/teaching-plan-slides.md'
 
 # Project information
-site_name: BIP Course Docs
+site_name: Iceland ML Course Docs
 
 # Configuration
 theme:
   name: material
   palette:
-    scheme: bip
+    scheme: iceland
   font:
     text: Source Sans 3
     code: DM Mono

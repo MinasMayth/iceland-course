@@ -9,3 +9,10 @@ tensorboard
 terratorch==1.0.1
 wandb
 webdataset
+geopandas
+shapely
+rasterio
+sentinelsat
+pandas
+numpy
+matplotlib
