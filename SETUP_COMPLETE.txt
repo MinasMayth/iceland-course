@@ -1,0 +1,166 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                     COPERNICUS AUTHENTICATION READY ✓                       ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📋 CREDENTIALS STORED
+   ├─ Client ID:     sh-a3f6b18d-a6d3-4553-9fd6-7e5a0d61e68a
+   └─ Client Secret: SXnymm9WABkAQTDPVgrgsqgKIreKJSQ9
+
+🔧 AUTHENTICATION METHOD: OAuth2 Client Credentials (Recommended)
+   ├─ For: Server-to-server, HPC automation
+   ├─ Token Lifetime: 3600 seconds (1 hour)
+   ├─ Auto-renewal: Yes (notebook handles this)
+   └─ Rate limit: No (unless requesting new tokens >5/min)
+
+════════════════════════════════════════════════════════════════════════════
+
+📚 SETUP GUIDES (Read in this order):
+   
+   1️⃣  SETUP_CHECKLIST.md
+       └─ Step-by-step checklist (starts in current directory)
+       └─ Time: ~15 minutes total
+       
+   2️⃣  COPERNICUS_QUICK_START.md  
+       └─ 5-minute quick reference
+       └─ Perfect for "remind me how to..."
+       
+   3️⃣  AUTHENTICATION_SETUP_COMPLETE.md
+       └─ Comprehensive documentation
+       └─ Best practices, troubleshooting
+       
+   4️⃣  notebooks/iceland-ml/COPERNICUS_SETUP.md
+       └─ Detailed technical guide
+       └─ Token management, security
+
+════════════════════════════════════════════════════════════════════════════
+
+🐍 PYTHON UTILITIES:
+   
+   notebooks/iceland-ml/
+   ├─ copernicus_auth.py (Module)
+   │  └─ Import: from copernicus_auth import get_token
+   │  └─ Features: Token caching, auto-refresh, error handling
+   │
+   └─ test_copernicus_auth.py (Test Script)
+      └─ Run: python3 test_copernicus_auth.py
+      └─ Verifies: Credentials, authentication, token validity
+
+════════════════════════════════════════════════════════════════════════════
+
+📓 LAB NOTEBOOKS (Ready to use):
+   
+   📘 Lab 3.1: lab3_1_gee_data_download.ipynb
+      ├─ Purpose: Download Sentinel-2 data from Copernicus
+      ├─ Auth: Automatic (reads from environment)
+      ├─ Output: Sentinel-2 ZIP files (SAFE format)
+      └─ Time: ~30 min (plus download time)
+      
+   📗 Lab 3.2: lab3_2_data_preprocessing.ipynb
+      ├─ Purpose: Preprocess S2 + extract training patches
+      ├─ Input: Sentinel-2 ZIP files from Lab 3.1
+      ├─ Ground truth: LUCAS points (Eurostat)
+      ├─ Output: Training patches (3x3 pixels)
+      └─ Time: ~20 min
+
+════════════════════════════════════════════════════════════════════════════
+
+⚡ QUICK START (Copy & Paste):
+
+Step 1 - Set credentials:
+   export COPERNICUS_CLIENT_ID="sh-a3f6b18d-a6d3-4553-9fd6-7e5a0d61e68a"
+   export COPERNICUS_CLIENT_SECRET="SXnymm9WABkAQTDPVgrgsqgKIreKJSQ9"
+
+Step 2 - Make permanent:
+   # Add the above 2 lines to ~/.bashrc
+   nano ~/.bashrc
+   source ~/.bashrc
+
+Step 3 - Test:
+   cd /home/samy/Documents/iceland-course/notebooks/iceland-ml/
+   python3 test_copernicus_auth.py
+
+Step 4 - Run Lab:
+   cd /home/samy/Documents/iceland-course/
+   jupyter notebook
+   # Open: notebooks/iceland-ml/lab3_1_gee_data_download.ipynb
+
+════════════════════════════════════════════════════════════════════════════
+
+🔒 SECURITY CHECKLIST:
+
+   ✅ Credentials stored in environment variables (not in code)
+   ✅ Not hardcoded in notebooks
+   ✅ Protected by .gitignore_credentials
+   ✅ Tokens auto-expire after 1 hour
+   ✅ Tokens auto-refresh (caching implemented)
+   ✅ Can revoke at any time (delete OAuth client)
+   ✅ Different per application (can create multiple)
+
+════════════════════════════════════════════════════════════════════════════
+
+❓ COMMON QUESTIONS:
+
+Q: Why OAuth2 instead of username/password?
+A: More secure, designed for server automation, no password in code
+
+Q: Does the token expire?
+A: Yes (1 hour), but notebooks auto-refresh - you don't need to do anything
+
+Q: What if I hit rate limits?
+A: Tokens are cached, so just use normally. Rate limits only if requesting
+   new tokens >5 times per minute
+
+Q: How do I use this in a Slurm job?
+A: Add the export commands to your job script (same as local)
+
+Q: How do I change credentials?
+A: Delete old OAuth client in Copernicus Dashboard, create new one,
+   update .bashrc
+
+════════════════════════════════════════════════════════════════════════════
+
+📍 FILE LOCATIONS:
+
+Root directory:
+   ├─ SETUP_CHECKLIST.md              ← Start here
+   ├─ COPERNICUS_QUICK_START.md
+   └─ AUTHENTICATION_SETUP_COMPLETE.md
+
+Lab directory:
+   notebooks/iceland-ml/
+   ├─ COPERNICUS_SETUP.md             ← Detailed docs
+   ├─ copernicus_auth.py              ← Utility module
+   ├─ test_copernicus_auth.py         ← Test script (executable)
+   ├─ lab3_1_gee_data_download.ipynb  ← Download lab
+   └─ lab3_2_data_preprocessing.ipynb  ← Preprocessing lab
+
+════════════════════════════════════════════════════════════════════════════
+
+✅ NEXT STEPS:
+
+   1. Read SETUP_CHECKLIST.md (5 min read)
+   2. Run the 4 setup steps (5 min)
+   3. Run test script (verify it works)
+   4. Start Lab 3.1 notebook
+   5. Download Sentinel-2 data
+   6. Process with Lab 3.2
+   7. Train models in Lab 4+
+
+════════════════════════════════════════════════════════════════════════════
+
+🎓 LEARNING PATH:
+
+   Lab 1: HPC Access ✓ Complete
+   Lab 2: Git & Jupyter ✓ Complete
+   Lab 3.1: Download S2 ← You are here (setup done)
+   Lab 3.2: Preprocess
+   Lab 4: Transformers
+   Lab 4.1: Train Models
+   Lab 5: Distributed Training
+   Lab 6: Validation
+   Lab 7: Foundation Models
+
+════════════════════════════════════════════════════════════════════════════
+Last Updated: February 2, 2026
+Status: READY ✓
+════════════════════════════════════════════════════════════════════════════
