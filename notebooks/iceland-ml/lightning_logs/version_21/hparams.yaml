@@ -1,8 +1,0 @@
-bands_dim: 4
-d_model: 64
-dim_feedforward: 256
-lr: 0.0001
-nhead: 8
-num_classes: 26
-num_layers: 4
-seq_len: 9
