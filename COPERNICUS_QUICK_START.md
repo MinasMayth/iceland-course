@@ -1,9 +1,16 @@
 # Copernicus Dataspace - Quick Start Guide
 
+> [!WARNING]
+> The client ID and secret below are **placeholders**. Create your own at
+> <https://console.dataspace.copernicus.eu/> (Console → OAuth 2.0) and export them
+> as `COPERNICUS_CLIENT_ID` / `COPERNICUS_CLIENT_SECRET`. Never commit real values:
+> this repository is public, and a committed secret is readable in the file *and*
+> in the git history even after you delete the line.
+
 ## Your Credentials
 
-✓ **Client ID**: `sh-a3f6b18d-a6d3-4553-9fd6-7e5a0d61e68a`  
-✓ **Client Secret**: `SXnymm9WABkAQTDPVgrgsqgKIreKJSQ9`
+✓ **Client ID**: `<your-client-id>`  
+✓ **Client Secret**: `<your-client-secret>`
 
 ---
 
@@ -12,8 +19,8 @@
 Add these lines to your `~/.bashrc` or run them in your terminal:
 
 ```bash
-export COPERNICUS_CLIENT_ID="sh-a3f6b18d-a6d3-4553-9fd6-7e5a0d61e68a"
-export COPERNICUS_CLIENT_SECRET="SXnymm9WABkAQTDPVgrgsqgKIreKJSQ9"
+export COPERNICUS_CLIENT_ID="<your-client-id>"
+export COPERNICUS_CLIENT_SECRET="<your-client-secret>"
 ```
 
 Then reload:

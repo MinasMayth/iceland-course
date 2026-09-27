@@ -1,10 +1,17 @@
 # Copernicus Dataspace Authentication Setup
 
+> [!WARNING]
+> The client ID and secret below are **placeholders**. Create your own at
+> <https://console.dataspace.copernicus.eu/> (Console → OAuth 2.0) and export them
+> as `COPERNICUS_CLIENT_ID` / `COPERNICUS_CLIENT_SECRET`. Never commit real values:
+> this repository is public, and a committed secret is readable in the file *and*
+> in the git history even after you delete the line.
+
 ## Quick Reference
 
 You have two credentials:
-- **Client ID**: `sh-a3f6b18d-a6d3-4553-9fd6-7e5a0d61e68a`
-- **Client Secret**: `SXnymm9WABkAQTDPVgrgsqgKIreKJSQ9`
+- **Client ID**: `<your-client-id>`
+- **Client Secret**: `<your-client-secret>`
 
 ⚠️ **SECURITY WARNING**: Never commit these credentials to Git or any public repository!
 
@@ -18,8 +25,8 @@ Add to `~/.bashrc` or `~/.bash_profile`:
 
 ```bash
 # Copernicus Dataspace Credentials (keep secure!)
-export COPERNICUS_CLIENT_ID="sh-a3f6b18d-a6d3-4553-9fd6-7e5a0d61e68a"
-export COPERNICUS_CLIENT_SECRET="SXnymm9WABkAQTDPVgrgsqgKIreKJSQ9"
+export COPERNICUS_CLIENT_ID="<your-client-id>"
+export COPERNICUS_CLIENT_SECRET="<your-client-secret>"
 ```
 
 Then reload:
@@ -90,8 +97,8 @@ For quick testing in Jupyter, you can set inline (but don't save/commit):
 ```python
 import os
 
-os.environ['COPERNICUS_CLIENT_ID'] = 'sh-a3f6b18d-a6d3-4553-9fd6-7e5a0d61e68a'
-os.environ['COPERNICUS_CLIENT_SECRET'] = 'SXnymm9WABkAQTDPVgrgsqgKIreKJSQ9'
+os.environ['COPERNICUS_CLIENT_ID'] = '<your-client-id>'
+os.environ['COPERNICUS_CLIENT_SECRET'] = '<your-client-secret>'
 
 # Now authenticate...
 ```
@@ -112,8 +119,8 @@ os.environ['COPERNICUS_CLIENT_SECRET'] = 'SXnymm9WABkAQTDPVgrgsqgKIreKJSQ9'
 module load Python/3.10
 
 # Set credentials (already in .bashrc, but explicit here)
-export COPERNICUS_CLIENT_ID="sh-a3f6b18d-a6d3-4553-9fd6-7e5a0d61e68a"
-export COPERNICUS_CLIENT_SECRET="SXnymm9WABkAQTDPVgrgsqgKIreKJSQ9"
+export COPERNICUS_CLIENT_ID="<your-client-id>"
+export COPERNICUS_CLIENT_SECRET="<your-client-secret>"
 
 # Run Python script
 python3 download_script.py

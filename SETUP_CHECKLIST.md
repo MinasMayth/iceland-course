@@ -1,9 +1,16 @@
 # Copernicus Dataspace Authentication - Setup Checklist
 
+> [!WARNING]
+> The client ID and secret below are **placeholders**. Create your own at
+> <https://console.dataspace.copernicus.eu/> (Console → OAuth 2.0) and export them
+> as `COPERNICUS_CLIENT_ID` / `COPERNICUS_CLIENT_SECRET`. Never commit real values:
+> this repository is public, and a committed secret is readable in the file *and*
+> in the git history even after you delete the line.
+
 ## ✅ What You Have
 
-- **Client ID**: `sh-a3f6b18d-a6d3-4553-9fd6-7e5a0d61e68a`
-- **Client Secret**: `SXnymm9WABkAQTDPVgrgsqgKIreKJSQ9`
+- **Client ID**: `<your-client-id>`
+- **Client Secret**: `<your-client-secret>`
 - **Authentication Method**: OAuth2 Client Credentials (recommended for HPC)
 
 ---
@@ -17,8 +24,8 @@
 
 ```bash
 # Set credentials for this session
-export COPERNICUS_CLIENT_ID="sh-a3f6b18d-a6d3-4553-9fd6-7e5a0d61e68a"
-export COPERNICUS_CLIENT_SECRET="SXnymm9WABkAQTDPVgrgsqgKIreKJSQ9"
+export COPERNICUS_CLIENT_ID="<your-client-id>"
+export COPERNICUS_CLIENT_SECRET="<your-client-secret>"
 
 # Verify they're set
 echo $COPERNICUS_CLIENT_ID
@@ -39,8 +46,8 @@ vim ~/.bashrc
 - [ ] Add these lines at the end:
 ```bash
 # Copernicus Dataspace Credentials (keep secure!)
-export COPERNICUS_CLIENT_ID="sh-a3f6b18d-a6d3-4553-9fd6-7e5a0d61e68a"
-export COPERNICUS_CLIENT_SECRET="SXnymm9WABkAQTDPVgrgsqgKIreKJSQ9"
+export COPERNICUS_CLIENT_ID="<your-client-id>"
+export COPERNICUS_CLIENT_SECRET="<your-client-secret>"
 ```
 
 - [ ] Save and close editor
@@ -103,8 +110,8 @@ For batch jobs, add this to your Slurm script:
 #SBATCH --time=2:00:00
 
 # Credentials are already in ~/.bashrc, but explicit here:
-export COPERNICUS_CLIENT_ID="sh-a3f6b18d-a6d3-4553-9fd6-7e5a0d61e68a"
-export COPERNICUS_CLIENT_SECRET="SXnymm9WABkAQTDPVgrgsqgKIreKJSQ9"
+export COPERNICUS_CLIENT_ID="<your-client-id>"
+export COPERNICUS_CLIENT_SECRET="<your-client-secret>"
 
 # Run your Python script
 python3 download_sentinel2.py
